@@ -251,7 +251,7 @@ speciesbrowsing <- dcast(speciesbrowsing,                           # Specifies 
                      value.var = "n",         # Name of the column whose values will be filled to cast
                      species_cor~browsingfactorial,             # LHS ~ RHS formula
                      fun.aggregate = sum)
-speciesbrowsing$percentageofbrowsed<-speciesbrowsing$yes/speciesbrowsing$no
+speciesbrowsing$percentageofbrowsed<-speciesbrowsing$yes/(speciesbrowsing$no+speciesbrowsing$yes)
 # this looks good, excet that rare pecies give a bit missleadin values...
 # these won't affect the big picture, so we can as well leave them in.
 
